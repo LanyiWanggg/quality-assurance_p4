@@ -78,9 +78,13 @@ public class GameOfLifePinningTest {
 		assertEquals(".", c_spy.toString());
 	}
 
-	//Preconditions: 
-    //Execution Steps: 
-    //Postconditions: 
+	//Preconditions: Have the 5x5 cell board set up
+				//spy mainPanel for stubbing its getNumNeighbors() method
+				//mock cell class for stubbing its getAlive() method
+				//return 3 when call mainPanelSpy.getNumNeighbors(2,3)
+				//return true when call cMock.getAlive()
+    //Execution Steps: call mainPanelSpy.iterateCell(2,3)
+    //Postconditions: the return value should be true
 	@Test
 	public void testIterateCellAlive()
 	{
@@ -103,9 +107,13 @@ public class GameOfLifePinningTest {
 
 	}
 
-	//Preconditions: 
-    //Execution Steps: 
-    //Postconditions: 
+	//Preconditions: Have the 5x5 cell board set up
+				//spy mainPanel for stubbing its getNumNeighbors() method
+				//mock cell class for stubbing its getAlive() method
+				//return 4 when call mainPanelSpy.getNumNeighbors(1,1)
+				//return false when call cMock.getAlive()
+    //Execution Steps: call mainPanelSpy.iterateCell(2,3)
+    //Postconditions: the return value should be false
 	@Test
 	public void testIterateCellNotAlive()
 	{
