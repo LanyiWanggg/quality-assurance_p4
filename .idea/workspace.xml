@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f3f3e51d-8f25-46a3-a5b0-8103db7f78cf" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1qkNJq0yoCIbobcYLAhBwS29eXk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="GameOfLifePinningTest.testIterateCellAlive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SlowLifeGUI" />
+      <useClassPathOnly />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="12" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GameOfLifePinningTest" />
+      <option name="METHOD_NAME" value="testIterateCellAlive" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.GameOfLifePinningTest.testIterateCellAlive" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3f3e51d-8f25-46a3-a5b0-8103db7f78cf" name="Default Changelist" comment="" />
+      <created>1617619558247</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617619558247</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1617621736168">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="424" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.-164.1440.875/0.25.1920.1055@0.25.1920.1055" timestamp="1617621736168" />
+  </component>
+</project>
