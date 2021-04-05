@@ -115,17 +115,16 @@ public class GameOfLifePinningTest {
         Cell[][] cell = new Cell[5][5];
 		for(int i = 0; i < 5; i++)
 		{
-			for(int j = 0; j < 5; j++)
+			for(int j = 0; j < cell[i].length; j++)
 			{
-				if(i==0 || i==4)
-					cell[i][j] = new Cell(false);
+				if(i==1 && j==2)
+					cell[i][j] = new Cell(true);
+				else if(i==2 && j==2)
+					cell[i][j] = new Cell(true);
+				else if(i==3 && j==2)
+					cell[i][j] = new Cell(true);
 				else
-				{
-					if(j==2)
-						cell[i][j] = new Cell(true);
-					else
-						cell[i][j] = new Cell(false);
-				}
+					cell[i][j] = new Cell(false);
 			}
 		}
 		mainPanel.setCells(cell);
@@ -133,17 +132,16 @@ public class GameOfLifePinningTest {
 		cell = mainPanel.getCells();
 		for(int i = 0; i < 5; i++)
 		{
-			for(int j = 0; j < 5; j++)
+			for(int j = 0; j < cell[i].length; j++)
 			{
-				if(i!=2)
-					assertEquals(".", cell[i][j].toString());
+				if(i==2 && j==1)
+					assertEquals("X",cell[i][j].toString());
+				else if(i==2 && j==2)
+					assertEquals("X",cell[i][j].toString());
+				else if(i==2 && j==3)
+					assertEquals("X",cell[i][j].toString());
 				else
-				{
-					if(j==0 || j==4)
-						assertEquals(".", cell[i][j].toString());
-					else
-						assertEquals("X", cell[i][j].toString());
-				}
+					assertEquals(".",cell[i][j].toString());
 			}
 		}
 
