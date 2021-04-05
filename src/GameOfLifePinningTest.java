@@ -113,37 +113,56 @@ public class GameOfLifePinningTest {
 	{
 		mainPanel = new MainPanel(5);
         Cell[][] cell = new Cell[5][5];
-		for(int i = 0; i < 5; i++)
+
+        for(int i = 0; i < 5; i++)
 		{
 			for(int j = 0; j < cell[i].length; j++)
 			{
-				if(i==1 && j==2)
-					cell[i][j] = new Cell(true);
-				else if(i==2 && j==2)
-					cell[i][j] = new Cell(true);
-				else if(i==3 && j==2)
-					cell[i][j] = new Cell(true);
-				else
-					cell[i][j] = new Cell(false);
+				if(i==1 && j==2) {
+					Cell cMock = Mockito.mock(Cell.class);
+					Mockito.when(cMock.getAlive()).thenReturn(true);
+					cell[i][j] = cMock;
+				}
+				else if(i==2 && j==2) {
+					Cell cMock = Mockito.mock(Cell.class);
+					Mockito.when(cMock.getAlive()).thenReturn(true);
+					cell[i][j] = cMock;
+				}
+				else if(i==3 && j==2) {
+					Cell cMock = Mockito.mock(Cell.class);
+					Mockito.when(cMock.getAlive()).thenReturn(true);
+					cell[i][j] = cMock;
+				}
+				else {
+					Cell cMock = Mockito.mock(Cell.class);
+					Mockito.when(cMock.getAlive()).thenReturn(false);
+					cell[i][j] = cMock;
+
+				}
 			}
 		}
 		mainPanel.setCells(cell);
 		mainPanel.calculateNextIteration();
+		
 		cell = mainPanel.getCells();
 		for(int i = 0; i < 5; i++)
 		{
 			for(int j = 0; j < cell[i].length; j++)
 			{
 				if(i==2 && j==1)
-					assertEquals("X",cell[i][j].toString());
+					 Mockito.verify(cell[i][j]).setAlive(true);
+
 				else if(i==2 && j==2)
-					assertEquals("X",cell[i][j].toString());
+					 Mockito.verify(cell[i][j]).setAlive(true);
+
 				else if(i==2 && j==3)
-					assertEquals("X",cell[i][j].toString());
+					 Mockito.verify(cell[i][j]).setAlive(true);
+
 				else
-					assertEquals(".",cell[i][j].toString());
+					 Mockito.verify(cell[i][j]).setAlive(false);
+
 			}
-		}
+		}   
 
 	}
 }
