@@ -48,7 +48,7 @@ public class Cell extends JButton {
 		// }
 		if (getAlive()) {
 			return "X";
-		} else {
+		} else { 
 			return ".";
 		}
 	}

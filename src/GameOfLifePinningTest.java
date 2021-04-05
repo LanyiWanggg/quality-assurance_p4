@@ -56,40 +56,24 @@ public class GameOfLifePinningTest {
 
 	/* TODO: Write the three pinning unit tests for the three optimized methods */
 
-	//Preconditions: Mock a Cell object, and return true when call getAlive().
-    //Execution Steps: Call c_mock.toString();
-    //Postconditions: Return value is "X"
 	@Test
 	public void testCellToStringX()
 	{
-		Cell c_spy = Mockito.spy(cell);
-		Mockito.when(c_spy.getAlive()).thenReturn(true);
-		assertEquals("X", c_spy.toString());
-	}
+		cell = new Cell(true);
+		assertEquals("X", cell.toString());
+	}  
 
-	//Preconditions: Mock a Cell object, and return false when call getAlive().
-    //Execution Steps: Call c_mock.toString();
-    //Postconditions: Return value is "."
 	@Test
 	public void testCellToStringNotX()
 	{
-		Cell c_spy = Mockito.spy(cell);
-		Mockito.when(c_spy.getAlive()).thenReturn(false);
-		assertEquals(".", c_spy.toString());
+		cell = new Cell(false);
+		assertEquals(".", cell.toString());
 	}
 
-	//Preconditions: Have the 5x5 cell board set up
-				//spy mainPanel for stubbing its getNumNeighbors() method
-				//mock cell class for stubbing its getAlive() method
-				//return 3 when call mainPanelSpy.getNumNeighbors(2,3)
-				//return true when call cMock.getAlive()
-    //Execution Steps: call mainPanelSpy.iterateCell(2,3)
-    //Postconditions: the return value should be true
 	@Test
 	public void testIterateCellAlive()
 	{
 		mainPanel = new MainPanel(5);
-		MainPanel mainPanelSpy = Mockito.spy(mainPanel);
 		Cell cell[][] = new Cell[5][5];
 		Cell cMock = Mockito.mock(Cell.class);
 		Mockito.when(cMock.getAlive()).thenReturn(true);
@@ -101,24 +85,15 @@ public class GameOfLifePinningTest {
 			}
 		}
 		mainPanel.setCells(cell);
-		Mockito.when(mainPanelSpy.getNumNeighbors(2,3)).thenReturn(3);
-		assertEquals(true, mainPanelSpy.iterateCell(2,3));
+		assertEquals(false, mainPanel.iterateCell(2,3));
 		
 
 	}
 
-	//Preconditions: Have the 5x5 cell board set up
-				//spy mainPanel for stubbing its getNumNeighbors() method
-				//mock cell class for stubbing its getAlive() method
-				//return 4 when call mainPanelSpy.getNumNeighbors(1,1)
-				//return false when call cMock.getAlive()
-    //Execution Steps: call mainPanelSpy.iterateCell(2,3)
-    //Postconditions: the return value should be false
 	@Test
 	public void testIterateCellNotAlive()
 	{
 		mainPanel = new MainPanel(5); 
-		MainPanel mainPanelSpy = Mockito.spy(mainPanel);
 		Cell cell[][] = new Cell[5][5];
 		Cell cMock = Mockito.mock(Cell.class);
 		Mockito.when(cMock.getAlive()).thenReturn(false);
@@ -130,13 +105,9 @@ public class GameOfLifePinningTest {
 			}
 		}
 		mainPanel.setCells(cell);
-		Mockito.when(mainPanelSpy.getNumNeighbors(1,1)).thenReturn(4);
-		assertEquals(false, mainPanelSpy.iterateCell(1,1));
+		assertEquals(false, mainPanel.iterateCell(2,2));
 	}
 
-	//Preconditions: Have the three cells of the center of the Cell board set up vertically to alive and the rest are dead
-    //Execution Steps: call calculateNextIteration()
-    //Postconditions: The three alive cells aligned vertically in the center of board should be converted to be aligned horizontally in the center
 	@Test
 	public void testCalculateNextIteration()
 	{
